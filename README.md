@@ -172,7 +172,7 @@ Antes da implementação, a interface do Diário de Receitas foi planejada e pro
 
 <div align="center">
 
-  <a href="COLE_AQUI_O_LINK_DO_FIGMA" target="_blank">
+  <a href="https://www.figma.com/design/TYN3diGGaMQfpkzybdGCqM/receita?node-id=0-1&t=oj6fNkj6qB1qBUJ9-1" target="_blank">
     <img src="https://img.shields.io/badge/ACESSAR%20PROT%C3%93TIPO-Figma-9747FF?style=for-the-badge&logo=figma&logoColor=white" alt="Acessar protótipo no Figma">
   </a>
 

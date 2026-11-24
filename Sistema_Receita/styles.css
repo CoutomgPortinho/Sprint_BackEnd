@@ -1,0 +1,1040 @@
+/* ==================================================
+   DIÁRIO DE RECEITAS
+   Identidade visual: cozinha autoral, escura e acolhedora
+   Paleta: Verde-carvão | Laranja | Creme
+   Fontes: Lora (títulos) + Inter (textos)
+================================================== */
+
+
+/* -----------------------------------------------
+   1. VARIÁVEIS E RESET
+----------------------------------------------- */
+
+:root {
+    --primary: #FFA033;
+    --primary-hover: #FFB35C;
+    --on-primary: #1A1206;
+
+    --blue: #C87929;          /* mantido: botão editar */
+    --green: #4F8A5B;
+    --green-hover: #63A370;
+    --red: #B84332;
+    --red-dark: #923426;
+
+    --bg: #101310;
+    --surface: #181D19;
+    --surface-2: #1F2621;
+    --field: #141914;
+    --border: #2A322B;
+
+    --table-head: #9C5300;
+    --table-head-text: #FFE6C7;
+
+    --text: #F2EEE7;
+    --text-muted: #9AA39B;
+
+    --shadow-sm: 0 3px 8px rgba(0,0,0,.25);
+    --shadow-md: 0 10px 28px rgba(0,0,0,.35);
+
+    --radius: 10px;
+
+    --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --font-title: 'Lora', Georgia, 'Times New Roman', serif;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+
+
+/* -----------------------------------------------
+   2. LOGO E ELEMENTOS DE MARCA
+----------------------------------------------- */
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.brand img {
+    display: block;
+    height: 52px;
+    width: auto;
+}
+
+.eyebrow {
+    display: block;
+    font-size: .72rem;
+    font-weight: 500;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--primary);
+}
+
+
+/* -----------------------------------------------
+   3. FORMULÁRIOS
+----------------------------------------------- */
+
+form {
+    background: var(--surface);
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.4rem;
+}
+
+label {
+    display: block;
+    margin-bottom: .45rem;
+    font-size: .88rem;
+    font-weight: 500;
+    color: var(--text);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="url"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;
+    padding: .8rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: .92rem;
+    font-family: var(--font);
+    color: var(--text);
+    background: var(--field);
+    transition: border-color .2s, box-shadow .2s;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #6F786F;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(255,160,51,.16);
+}
+
+select option {
+    background: var(--surface);
+    color: var(--text);
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: .55rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: .85rem;
+    color: var(--text-muted);
+    background: var(--field);
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+    background: #3A433B;
+    color: var(--text);
+    border: none;
+    padding: .45rem .9rem;
+    margin-right: .75rem;
+    border-radius: 6px;
+    font-family: var(--font);
+    cursor: pointer;
+    transition: .2s;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background: var(--primary);
+    color: var(--on-primary);
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+small {
+    display: block;
+    margin-top: .35rem;
+    font-size: .78rem;
+    color: var(--text-muted);
+}
+
+
+/* -----------------------------------------------
+   4. BOTÕES
+----------------------------------------------- */
+
+.btn-primary,
+.btn-edit,
+.btn-delete,
+.btn-music,
+.btn-back,
+.btn-youtube {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+    padding: .65rem 1.2rem;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: .88rem;
+    font-weight: 600;
+    font-family: var(--font);
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background .2s, color .2s, transform .2s, box-shadow .2s;
+}
+
+.btn-primary {
+    padding: .8rem 1.6rem;
+    background: var(--primary);
+    color: var(--on-primary);
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(255,160,51,.22);
+}
+
+/* Botão secundário (Cancelar, Limpar...) */
+.btn-back {
+    background: transparent;
+    color: var(--text);
+    border-color: #3A433B;
+}
+
+.btn-back:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* "Voltar ao menu" e "Sair" no topo: laranja sólido, como no layout */
+.header-actions .btn-back,
+.topbar .btn-back {
+    background: var(--primary);
+    color: var(--on-primary);
+    border-color: var(--primary);
+}
+
+.header-actions .btn-back:hover,
+.topbar .btn-back:hover {
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
+    color: var(--on-primary);
+}
+
+.btn-edit {
+    background: #B4691F;
+    color: #fff;
+}
+
+.btn-edit:hover {
+    background: #D17F2D;
+}
+
+.btn-delete {
+    background: var(--red);
+    color: #fff;
+}
+
+.btn-delete:hover {
+    background: var(--red-dark);
+}
+
+.btn-music {
+    background: var(--green);
+    color: #fff;
+}
+
+.btn-music:hover {
+    background: var(--green-hover);
+}
+
+.btn-youtube {
+    background: #A82E24;
+    color: #fff;
+}
+
+.btn-youtube:hover {
+    background: #D13A2D;
+}
+
+
+/* -----------------------------------------------
+   5. MENSAGENS
+----------------------------------------------- */
+
+.message {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    padding: .85rem 1.1rem;
+    border-radius: 8px;
+    margin-bottom: 1.25rem;
+    font-size: .92rem;
+    font-weight: 500;
+}
+
+.message.success {
+    background: #17301D;
+    color: #B6E6A5;
+    border: 1px solid #2F5A38;
+}
+
+.message.error {
+    background: #3A1A16;
+    color: #FFB4A8;
+    border: 1px solid #70332A;
+}
+
+
+/* -----------------------------------------------
+   6. TELA DE LOGIN (painel dividido)
+----------------------------------------------- */
+
+.login-page {
+    min-height: 100vh;
+}
+
+.login-split {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    min-height: 100vh;
+}
+
+.login-panel {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2.5rem;
+    background: var(--bg);
+}
+
+.login-panel .brand img {
+    height: 56px;
+}
+
+.login-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.login-content h1 {
+    margin: .7rem 0 .4rem;
+    font-family: var(--font-title);
+    font-size: 2.1rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--text);
+}
+
+.login-sub {
+    margin-bottom: 1.8rem;
+    font-size: .9rem;
+    color: var(--text-muted);
+}
+
+.login-content form {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+
+.login-content .btn-primary {
+    width: 100%;
+    margin-top: .6rem;
+    padding: .9rem 1.2rem;
+    font-size: .95rem;
+}
+
+/* Campo de senha com botão "Mostrar" */
+.password-field {
+    position: relative;
+}
+
+.password-field input {
+    padding-right: 5rem;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: .9rem;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-family: var(--font);
+    font-size: .78rem;
+    font-weight: 500;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.toggle-password:hover {
+    color: var(--primary-hover);
+}
+
+/* Linhas de apoio (lembrar de mim, esqueceu a senha, cadastre-se) */
+.login-extra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: -.4rem 0 .8rem;
+    font-size: .78rem;
+    color: var(--text-muted);
+}
+
+.login-switch {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: .82rem;
+    color: var(--text-muted);
+}
+
+.link-accent {
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.link-accent:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+.login-hint {
+    margin-top: 1.8rem;
+    padding: .9rem 1rem;
+    background: var(--surface);
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    text-align: center;
+    font-size: .78rem;
+    color: var(--text-muted);
+}
+
+.login-hint strong {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.login-hint code {
+    background: #262E27;
+    color: var(--primary-hover);
+    padding: .1rem .4rem;
+    border-radius: 4px;
+}
+
+.login-footer {
+    font-size: .72rem;
+    color: var(--text-muted);
+}
+
+/* Lado direito: mensagem + foto (opcional) */
+.login-hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2.5rem 2rem;
+    overflow: hidden;
+    background:
+        linear-gradient(180deg, rgba(16,19,16,.82) 0%, rgba(16,19,16,.15) 45%, rgba(16,19,16,.55) 100%),
+        url('assets/login-hero.jpg') center / cover no-repeat,
+        radial-gradient(ellipse at 70% 85%, #8A4A12 0%, transparent 60%),
+        linear-gradient(160deg, #2A2E22, #151913);
+}
+
+.login-hero .eyebrow {
+    font-size: .62rem;
+    letter-spacing: .18em;
+}
+
+.login-hero h2 {
+    margin: .6rem 0 0;
+    padding: 0;
+    border: none;
+    max-width: 14ch;
+    font-family: var(--font-title);
+    font-size: 1.75rem;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #fff;
+}
+
+
+/* -----------------------------------------------
+   7. LAYOUT BASE
+----------------------------------------------- */
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px 32px 48px;
+}
+
+
+/* -----------------------------------------------
+   8. MENU PRINCIPAL
+----------------------------------------------- */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-header h1 {
+    margin-top: .4rem;
+    font-family: var(--font-title);
+    font-size: 2.6rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--text);
+}
+
+.page-header p {
+    margin-top: .5rem;
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.page-header p strong {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.75rem;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.menu-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform .3s, border-color .3s, box-shadow .3s;
+}
+
+.menu-card:hover,
+.menu-card:focus-within {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 12px 28px rgba(255,160,51,.10);
+}
+
+.menu-card a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text);
+}
+
+.menu-card-icon {
+    font-size: 2.2rem;
+    margin-bottom: .8rem;
+}
+
+.menu-card-title {
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: .04em;
+    color: var(--primary);
+    margin-bottom: .4rem;
+}
+
+.menu-card-desc {
+    font-size: .82rem;
+    color: var(--text);
+}
+
+
+/* -----------------------------------------------
+   9. TIPOGRAFIA
+----------------------------------------------- */
+
+h2 {
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    padding-bottom: .75rem;
+    border-bottom: 1px solid var(--border);
+}
+
+h3 {
+    font-family: var(--font-title);
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--text);
+    margin: 2rem 0 1rem;
+}
+
+
+/* -----------------------------------------------
+   10. CABEÇALHO DE PÁGINA (logo + título + ações)
+----------------------------------------------- */
+
+.page-header-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+    flex-wrap: wrap;
+}
+
+.page-header-bar h2 {
+    margin: 0 auto 0 0;
+    padding: 0;
+    border: none;
+    font-size: 2rem;
+    color: var(--text);
+}
+
+.page-header-bar .header-actions {
+    display: flex;
+    gap: .6rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+/* -----------------------------------------------
+   11. FORMULÁRIOS EM GRADE
+----------------------------------------------- */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 2rem;
+}
+
+.form-grid .form-group.full {
+    grid-column: 1 / -1;
+}
+
+.form-actions {
+    display: flex;
+    gap: .75rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: .5rem;
+    grid-column: 1 / -1;
+}
+
+.current-image {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    margin-top: .75rem;
+    padding: .75rem;
+    background: var(--field);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.current-image img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.current-image small {
+    margin: 0;
+}
+
+
+/* -----------------------------------------------
+   12. TABELAS
+----------------------------------------------- */
+
+.table-container {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 14px 18px;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background: var(--table-head);
+    color: var(--table-head-text);
+    font-family: var(--font-title);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: .02em;
+    white-space: nowrap;
+    border-bottom: none;
+}
+
+td {
+    color: var(--text);
+    font-size: .92rem;
+}
+
+tbody tr {
+    background: var(--surface);
+    transition: background .2s;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background: var(--surface-2);
+}
+
+.col-foto,
+.col-capa {
+    width: 90px;
+    white-space: nowrap;
+}
+
+.col-youtube {
+    width: 110px;
+    white-space: nowrap;
+}
+
+.col-acoes {
+    white-space: nowrap;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.table-thumbnail {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    border: 1px solid var(--border);
+}
+
+.no-image {
+    width: 60px;
+    height: 60px;
+    background: var(--field);
+    border: 1px dashed #3A433B;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .7rem;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.2;
+}
+
+td.empty-cell {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 2rem;
+    font-size: .92rem;
+}
+
+
+/* -----------------------------------------------
+   13. FILTROS
+----------------------------------------------- */
+
+.filters {
+    background: var(--surface);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border);
+}
+
+.filters form {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.filter-item {
+    flex: 1;
+    min-width: 180px;
+}
+
+.filter-actions {
+    display: flex;
+    gap: .75rem;
+    align-items: center;
+}
+
+
+/* -----------------------------------------------
+   14. UTILITÁRIOS
+----------------------------------------------- */
+
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: var(--text-muted);
+    font-size: .9rem;
+}
+
+.mt-1 { margin-top: .5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+
+.mb-1 { margin-bottom: .5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+
+
+/* -----------------------------------------------
+   15. SELEÇÃO DE TEXTO E SCROLLBAR
+----------------------------------------------- */
+
+::selection {
+    background: var(--primary);
+    color: var(--on-primary);
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3A433B;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+
+/* -----------------------------------------------
+   16. RESPONSIVIDADE
+----------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .login-split {
+        grid-template-columns: 1fr;
+    }
+
+    .login-hero {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 16px;
+    }
+
+    .brand img {
+        height: 44px;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .page-header-bar h2 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    form {
+        padding: 1.25rem;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid .form-group.full {
+        grid-column: auto;
+    }
+
+    .filter-group {
+        flex-direction: column;
+        gap: .75rem;
+    }
+
+    .filter-item {
+        min-width: 100%;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 560px;
+    }
+
+    th, td {
+        padding: 10px 12px;
+        font-size: .85rem;
+    }
+
+    .table-thumbnail,
+    .no-image {
+        width: 48px;
+        height: 48px;
+    }
+
+    .col-foto,
+    .col-capa {
+        width: 68px;
+    }
+
+    .action-buttons {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .btn-edit,
+    .btn-delete,
+    .btn-music,
+    .btn-youtube {
+        padding: .4rem .7rem;
+        font-size: .78rem;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-card a {
+        min-height: 120px;
+        padding: 1.5rem 1rem;
+    }
+
+    .login-panel {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .login-content h1 {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .page-header h1 {
+        font-size: 1.7rem;
+    }
+
+    .topbar {
+        margin-bottom: 1.5rem;
+    }
+
+    .page-header {
+        margin-bottom: 2rem;
+    }
+
+    .page-header-bar .header-actions {
+        width: 100%;
+    }
+}

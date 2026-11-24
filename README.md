@@ -1,7 +1,5 @@
 # Diário de Receitas 📔 🍝
 
-# Objetivo do Projeto
-
 O **Diário de Receitas** é um website desenvolvido pela nossa empresa de tecnologia sob demanda para centralizar e organizar o gerenciamento culinário. 
 
 O principal objetivo da plataforma é facilitar o acesso rápido às receitas no dia a dia e eliminar problemas comuns de registros manuais, como o extravio de informações e a perda de dados. Com um sistema dedicado, receitas e profissionais ficam organizados em um único ambiente seguro e de fácil consulta.
@@ -16,7 +14,7 @@ O principal objetivo da plataforma é facilitar o acesso rápido às receitas no
 
 
 
-# Ferramentas e Tecnologias Utilizadas
+# Ferramentas e Tecnologias Utilizadas ⚙️🔍
 
 | Ferramenta / Tecnologia | Finalidade no Projeto |
 
@@ -28,11 +26,11 @@ O principal objetivo da plataforma é facilitar o acesso rápido às receitas no
 
 
 
-# Participantes do Projeto
+# Participantes do Projeto 🧑🏼‍💻 👩🏼‍💻
 
-- caline myrella lorena ramos
-- enzo ferrari lima
-- gabriel de araujo torres
-- gustavo silva cruz
-- miguel augusto porto coutinho
-- tainá alves silveira
+- Caline Myrella Lorena Ramos
+- Enzo Ferrari Lima
+- Gabriel de Araujo Torres
+- Gustavo Silva Cruz
+- Miguel Augusto Porto Coutinho
+- Tainá Alves Silveira
